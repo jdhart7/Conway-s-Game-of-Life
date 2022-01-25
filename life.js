@@ -1,5 +1,6 @@
-const boardSize = 100;                                   //size of the play area
+const boardSize = 50;                                   //size of the play area
 let land = [];
+var life;
 
 window.onload=function() {
     resetBoard();
@@ -32,7 +33,6 @@ function resetBoard() {
 function toggleSpace(event) {           //manually toggle a space alive/dead
     let x = event.target.dataset.x;
     let y = event.target.dataset.y;
-    console.log(x + ', ' + y);
     if(land[x][y] == 0) {
         land[x][y] = 1;
         event.target.style.background = 'lightseagreen';
@@ -61,7 +61,6 @@ function stepForward() {
                         continue;
                     }
                     if (land[i + k][j + l] == 1) {
-                        console.log(i + ', ' + j + ' neighbor: ' + k + ', ' + l);
                         neighbors++;
                     }
                 }
@@ -93,4 +92,8 @@ function stepForward() {
     newDisplay = newDisplay.join('');
     land = nextMove;
     document.getElementById('gameBoard').innerHTML = newDisplay;
+}
+
+function startLife() {
+    life = setInterval(stepForward, 300);
 }
