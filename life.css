@@ -1,0 +1,11 @@
+#gameBoard {
+    line-height: 0px;
+}
+.test {
+    width: 15px;
+    height: 15px;
+    background-color: ghostwhite;
+    border: 1px grey solid;
+    cursor: pointer;
+    display: inline-block;
+}
