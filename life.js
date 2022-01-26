@@ -1,5 +1,5 @@
 const boardSize = 50;       //size of the play area
-const lifeSpeed = 200;      //speed of the game
+const lifeSpeed = 250;      //speed of the game
 let land = [];
 var life;
 
@@ -8,6 +8,7 @@ window.onload=function() {
 }
 
 function resetBoard() {
+    clearInterval(life);
     let board = document.getElementById('gameBoard');
 
     for(let i = 0; i < boardSize; i++) {        //initializing a 2D array
@@ -96,5 +97,14 @@ function stepForward() {
 }
 
 function startLife() {
-    life = setInterval(stepForward, lifeSpeed);
+    console.log(life);
+    if (parseInt(lifeSpeed / 100) !== life) {
+        console.log('test2');
+        life = setInterval(stepForward, lifeSpeed);
+    }
+}
+
+function pauseLife() {
+    clearInterval(life);
+    life = 0;
 }
