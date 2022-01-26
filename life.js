@@ -98,7 +98,7 @@ function stepForward() {
 
 function startLife() {
     console.log(life);
-    if (parseInt(lifeSpeed / 100) !== life) {
+    if (!life) {
         console.log('test2');
         life = setInterval(stepForward, lifeSpeed);
     }
@@ -106,5 +106,5 @@ function startLife() {
 
 function pauseLife() {
     clearInterval(life);
-    life = 0;
+    life = null;
 }
