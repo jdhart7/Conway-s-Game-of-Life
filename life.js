@@ -8,7 +8,7 @@ window.onload=function() {
 }
 
 function resetBoard() {
-    clearInterval(life);
+    pauseLife();
     let board = document.getElementById('gameBoard');
 
     for(let i = 0; i < boardSize; i++) {        //initializing a 2D array
@@ -99,7 +99,6 @@ function stepForward() {
 function startLife() {
     console.log(life);
     if (!life) {
-        console.log('test2');
         life = setInterval(stepForward, lifeSpeed);
     }
 }
