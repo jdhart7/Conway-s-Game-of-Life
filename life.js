@@ -1,4 +1,5 @@
-const boardSize = 50;                                   //size of the play area
+const boardSize = 50;       //size of the play area
+const lifeSpeed = 200;      //speed of the game
 let land = [];
 var life;
 
@@ -95,5 +96,5 @@ function stepForward() {
 }
 
 function startLife() {
-    life = setInterval(stepForward, 300);
+    life = setInterval(stepForward, lifeSpeed);
 }
