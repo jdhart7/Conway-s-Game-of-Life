@@ -5,8 +5,8 @@ var life;
 //setting the size of the play area based on the user's screen size
 var boardWidth;
 if ((Math.max(document.documentElement.clientWidth) >= 1040) && document.documentElement.clientWidth > document.documentElement.clientHeight) {
-    boardWidth = parseInt((Math.max(document.documentElement.clientWidth) - 200) / 15);
-    boardHeight = parseInt((Math.max(document.documentElement.clientHeight) - 130) / 15);
+    boardWidth = parseInt((Math.max(document.documentElement.clientWidth) - 200) / 15) - 2;
+    boardHeight = parseInt((Math.max(document.documentElement.clientHeight) - 130) / 15) - 2;
 } else {
     boardWidth = 25;
     boardHeight = 25;
